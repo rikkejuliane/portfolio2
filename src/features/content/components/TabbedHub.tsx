@@ -10,24 +10,33 @@ function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
 }
 
-const TABS: { id: ContentTab; label: string; bg: string; width: string }[] = [
+const TABS: {
+  id: ContentTab;
+  label: string;
+  bg: string;
+  width: string;
+  text?: string;
+}[] = [
   {
     id: "about",
-    label: "ABOUT",
+    label: "about",
     bg: "bg-[url('/aboutTab.svg')] bg-no-repeat bg-center bg-contain",
     width: "w-[330.50px]",
+    text: "text-wine",
   },
   {
     id: "projects",
-    label: "PROJECTS",
+    label: "projects",
     bg: "bg-[url('/projectsTab.svg')] bg-no-repeat bg-center bg-contain",
     width: "w-[330px]",
+    text: "text-wine",
   },
   {
     id: "contact",
-    label: "CONTACT",
+    label: "contact",
     bg: "bg-[url('/contactTab.svg')] bg-no-repeat bg-center bg-contain",
     width: "w-[330.50px]",
+    text: "text-lightpink",
   },
 ];
 
@@ -44,10 +53,10 @@ export default function TabbedHub({
 
   return (
     <section className="mt-5 mb-20">
-      <div className="mx-auto max-w-[1322px] font-jakarta text-primary">
+      <div className="mx-auto max-w-[1322px] font-montserrat">
         {/* TABS */}
         <div
-          className="flex h-[85.99px] pl-[3px] gap-0 p-0 -mb-[1px]"
+          className="flex h-[85.99px] pl-[3px] gap-0 p-0 -mb-[1px] overflow-hidden text-[28px]"
           role="tablist"
           aria-label="Content tabs">
           {TABS.map((t) => (
@@ -58,19 +67,38 @@ export default function TabbedHub({
               type="button"
               onClick={() => setActive(t.id)}
               className={cx(
-                "grid place-items-center",
+                "group grid place-items-center pt-3 -ml-[1px] first:ml-0", // ← add group
                 t.width,
                 t.bg,
+                t.text,
                 active === t.id && "font-bold"
               )}>
-              <span className="block">{t.label}</span>
+              <span
+                className={cx(
+                  "block leading-none", 
+                  "transition-transform duration-150", 
+                  "motion-safe:group-hover:scale-[1.06]",
+                  "will-change-transform",
+                  active === t.id && "scale-[1.03]"
+                )}>
+                {t.label}
+              </span>
             </button>
           ))}
 
-          {/* SPACER (kept!) */}
-          <div className="w-[326.50px] bg-[url('/spaceTab.svg')] bg-no-repeat bg-center bg-contain">
-            {/* Add a CTA button here later if you want */}
-          </div>
+          {/* SPACER */}
+          <div
+            className={cx(
+              // your base spacer style — always visible
+              "w-[328.50px] bg-[url('/spaceTab.svg')] bg-no-repeat bg-center bg-contain -ml-[1px]", // ← overlap
+
+              // optional overrides for matching tab backgrounds
+              active === "about" && "bg-[url('/spaceTab.svg')]",
+              active === "projects" && "bg-[url('/spaceTabRose.svg')]",
+              active === "contact" && "bg-[url('/spaceTabBrown.svg')]"
+            )}
+            aria-hidden="true"
+          />
         </div>
 
         {/* PANEL */}
@@ -78,9 +106,9 @@ export default function TabbedHub({
           role="tabpanel"
           className={cx(
             "max-w-[1322px] h-[566px] bg-[url('/panel.svg')] bg-no-repeat bg-center bg-contain",
-            active === "about" && "bg-primary/20",
-            active === "projects" && "bg-secondary/20",
-            active === "contact" && "bg-primary/10"
+            active === "about" && "bg-[url('/panel.svg')]",
+            active === "projects" && "bg-[url('/panelRose.svg')]",
+            active === "contact" && "bg-[url('/panelBrown.svg')]"
           )}>
           {renderPanel ? (
             renderPanel(active)
