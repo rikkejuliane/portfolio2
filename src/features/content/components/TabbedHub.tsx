@@ -52,7 +52,7 @@ export default function TabbedHub({
   const { active, setActive } = useContentTabs();
 
   return (
-    <section className="mt-5 mb-20">
+    <section className="mt-[275px] mb-20">
       <div className="mx-auto max-w-[1322px] font-montserrat">
         {/* TABS */}
         <div
