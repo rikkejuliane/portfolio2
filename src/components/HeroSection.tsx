@@ -35,8 +35,8 @@ export default function HeroSection() {
                 width="619.336"
                 height="133.049"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix
                   in="SourceAlpha"
                   type="matrix"
@@ -69,11 +69,11 @@ export default function HeroSection() {
                 x2="615.84"
                 y2="62.8415"
                 gradientUnits="userSpaceOnUse">
-                <stop stop-color="#4D0011" />
-                <stop offset="0.25" stop-color="#C77D86" />
-                <stop offset="0.5" stop-color="#102B1F" />
-                <stop offset="0.75" stop-color="#FFD9D9" />
-                <stop offset="1" stop-color="#493129" />
+                <stop stopColor="#4D0011" />
+                <stop offset="0.25" stopColor="#C77D86" />
+                <stop offset="0.5" stopColor="#102B1F" />
+                <stop offset="0.75" stopColor="#FFD9D9" />
+                <stop offset="1" stopColor="#493129" />
               </linearGradient>
             </defs>
           </svg>
