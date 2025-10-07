@@ -21,21 +21,21 @@ const TABS: {
     id: "about",
     label: "about",
     bg: "bg-[url('/aboutTab.svg')] bg-no-repeat bg-center bg-contain",
-    width: "w-[330.50px]",
+    width: "max-w-[330.50px]",
     text: "text-wine",
   },
   {
     id: "projects",
     label: "projects",
     bg: "bg-[url('/projectsTab.svg')] bg-no-repeat bg-center bg-contain",
-    width: "w-[330px]",
+    width: "max-w-[330px]",
     text: "text-wine",
   },
   {
     id: "contact",
     label: "contact",
     bg: "bg-[url('/contactTab.svg')] bg-no-repeat bg-center bg-contain",
-    width: "w-[330.50px]",
+    width: "max-w-[330.50px]",
     text: "text-lightpink",
   },
 ];
@@ -53,10 +53,10 @@ export default function TabbedHub({
 
   return (
     <section className="mt-[275px] mb-20">
-      <div className="mx-auto max-w-[1322px] font-montserrat">
+      <div className="flex flex-col mx-auto max-w-[1322px] font-montserrat">
         {/* TABS */}
         <div
-          className="flex h-[85.99px] pl-[3px] gap-0 p-0 -mb-[1px] overflow-hidden text-[28px]"
+          className="flex h-[85.99px] pl-[3px] gap-0 p-0 -mb-[1px] text-[28px]"
           role="tablist"
           aria-label="Content tabs">
           {TABS.map((t) => (
@@ -67,7 +67,7 @@ export default function TabbedHub({
               type="button"
               onClick={() => setActive(t.id)}
               className={cx(
-                "group grid place-items-center pt-3 -ml-[1px] first:ml-0", // ← add group
+                "w-full flex justify-center items-center pt-3 -ml-[1px] first:ml-0", 
                 t.width,
                 t.bg,
                 t.text,
@@ -89,10 +89,7 @@ export default function TabbedHub({
           {/* SPACER */}
           <div
             className={cx(
-              // your base spacer style — always visible
-              "w-[328.50px] bg-[url('/spaceTab.svg')] bg-no-repeat bg-center bg-contain -ml-[1px]", // ← overlap
-
-              // optional overrides for matching tab backgrounds
+              "flex-auto bg-[url('/spaceTab.svg')] bg-no-repeat bg-center bg-contain -ml-[1px]", // ← overlap
               active === "about" && "bg-[url('/spaceTab.svg')]",
               active === "projects" && "bg-[url('/spaceTabRose.svg')]",
               active === "contact" && "bg-[url('/spaceTabBrown.svg')]"
@@ -112,8 +109,8 @@ export default function TabbedHub({
           )}>
           {renderPanel ? (
             renderPanel(active)
-          ) : active === "about" ? (
-            <AboutSection />
+          // ) : active === "about" ? (
+          //   <AboutSection />
           ) : active === "projects" ? (
             <ProjectsSection />
           ) : (
