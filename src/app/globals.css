@@ -13,3 +13,41 @@
   /* Fonts */
   --font-montserrat: "Montserrat", sans-serif;
 }
+
+
+@layer utilities {
+  /* One place to tweak the tab row height */
+  .--tabh { --tab-h: 85.99px; }
+
+  /* Row: fixed height; children will stretch to this height */
+  .tab-row { @apply flex items-stretch overflow-hidden; height: var(--tab-h); }
+
+  /* Tab buttons: fixed height, no shrinking */
+  .tab-btn { @apply grid place-items-center shrink-0 -ml-[1px] first:ml-0; height: 100%; }
+
+  /* Spacer that acts like a filled div, width-only shrink via flex */
+  .spacer-mask {
+    flex: 1 1 328.5px;      /* grow 1, shrink 1, basis ~328.5px → spacer gives up width first */
+    height: 100%;
+    min-height: var(--tab-h);
+    max-height: var(--tab-h);
+
+    /* color fills the shape */
+    background-color: var(--spacer-color, #F9C9CF);
+
+    /* SVG as a mask that STRETCHES to the box (no aspect drama) */
+    -webkit-mask-image: var(--spacer-img);
+    mask-image: var(--spacer-img);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  /* Optional: a safe fallback if mask isn’t supported */
+  @supports not (mask-image: url("")) {
+    .spacer-mask { background-color: var(--spacer-color, #F9C9CF); }
+  }
+}

@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useContentTabs, type ContentTab } from "@/stores/useContentTabs";
 import AboutSection from "./sections/AboutSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import ContactSection from "./sections/ContactSection";
 
-// className helper
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
 }
@@ -14,36 +14,28 @@ const TABS: {
   id: ContentTab;
   label: string;
   bg: string;
-  width: string;
   text?: string;
 }[] = [
   {
     id: "about",
     label: "about",
-    bg: "bg-[url('/aboutTab.svg')] bg-no-repeat bg-center bg-contain",
-    width: "max-w-[330.50px]",
+    bg: "bg-[url('/aboutTab.svg')]",
     text: "text-wine",
   },
   {
     id: "projects",
     label: "projects",
-    bg: "bg-[url('/projectsTab.svg')] bg-no-repeat bg-center bg-contain",
-    width: "max-w-[330px]",
+    bg: "bg-[url('/projectsTab.svg')]",
     text: "text-wine",
   },
   {
     id: "contact",
     label: "contact",
-    bg: "bg-[url('/contactTab.svg')] bg-no-repeat bg-center bg-contain",
-    width: "max-w-[330.50px]",
+    bg: "bg-[url('/contactTab.svg')]",
     text: "text-lightpink",
   },
 ];
 
-/**
- * TabbedHub — minimal public tabs/folder panel with a right-side spacer.
- * No keyboard logic; just click tabs to switch content.
- */
 export default function TabbedHub({
   renderPanel,
 }: {
@@ -56,7 +48,7 @@ export default function TabbedHub({
       <div className="flex flex-col mx-auto max-w-[1322px] font-montserrat">
         {/* TABS */}
         <div
-          className="flex h-[85.99px] pl-[3px] gap-0 p-0 -mb-[1px] text-[28px]"
+          className="flex items-stretch h-[85.99px] pl-[3px] gap-0 p-0 -mb-[1px] text-[20px] md:text-[28px]"
           role="tablist"
           aria-label="Content tabs">
           {TABS.map((t) => (
@@ -67,55 +59,63 @@ export default function TabbedHub({
               type="button"
               onClick={() => setActive(t.id)}
               className={cx(
-                "w-full flex justify-center items-center pt-3 -ml-[1px] first:ml-0", 
-                t.width,
+                "h-full min-w-0 -ml-[1px] first:ml-0 grid place-items-center pt-3",
+                "flex-[0_1_330px]",
                 t.bg,
+                "bg-no-repeat bg-center bg-[length:100%_100%]",
                 t.text,
                 active === t.id && "font-bold"
               )}>
-              <span
-                className={cx(
-                  "block leading-none", 
-                  "transition-transform duration-150", 
-                  "motion-safe:group-hover:scale-[1.06]",
-                  "will-change-transform",
-                  active === t.id && "scale-[1.03]"
-                )}>
+              <span className="block truncate transition-transform duration-150 motion-safe:group-hover:scale-[1.06] will-change-transform">
                 {t.label}
               </span>
             </button>
           ))}
 
-          {/* SPACER */}
+          {/* SPACER  */}
           <div
+            aria-hidden="true"
             className={cx(
-              "flex-auto bg-[url('/spaceTab.svg')] bg-no-repeat bg-center bg-contain -ml-[1px]", // ← overlap
+              "-ml-[1px] h-full min-w-0",
+              "flex-[0_1_328.5px]",
+              "bg-no-repeat bg-center bg-[length:100%_100%]",
               active === "about" && "bg-[url('/spaceTab.svg')]",
               active === "projects" && "bg-[url('/spaceTabRose.svg')]",
               active === "contact" && "bg-[url('/spaceTabBrown.svg')]"
             )}
-            aria-hidden="true"
           />
         </div>
 
-        {/* PANEL */}
+        {/* PANEL  */}
         <div
           role="tabpanel"
-          className={cx(
-            "max-w-[1322px] h-[566px] bg-[url('/panel.svg')] bg-no-repeat bg-center bg-contain",
-            active === "about" && "bg-[url('/panel.svg')]",
-            active === "projects" && "bg-[url('/panelRose.svg')]",
-            active === "contact" && "bg-[url('/panelBrown.svg')]"
-          )}>
-          {renderPanel ? (
-            renderPanel(active)
-          // ) : active === "about" ? (
-          //   <AboutSection />
-          ) : active === "projects" ? (
-            <ProjectsSection />
-          ) : (
-            <ContactSection />
-          )}
+          className="relative w-full max-w-[1322px] flex-none overflow-hidden"
+          style={{ height: 566 }}>
+          <Image
+            src={
+              active === "projects"
+                ? "/panelRose.svg"
+                : active === "contact"
+                ? "/panelBrown.svg"
+                : "/panel.svg"
+            }
+            alt=""
+            fill
+            sizes="(max-width: 1322px) 100vw, 1322px"
+            className="object-fill select-none pointer-events-none"
+          />
+
+          <div className="absolute inset-0 overflow-y-auto overflow-x-hidden">
+            {renderPanel ? (
+              renderPanel(active)
+            ) : active === "about" ? (
+              <AboutSection />
+            ) : active === "projects" ? (
+              <ProjectsSection />
+            ) : (
+              <ContactSection />
+            )}
+          </div>
         </div>
       </div>
     </section>
