@@ -26,16 +26,19 @@ export default function AboutSection() {
           <p className="mt-5 text-base break-words">
             My journey into web development began with blogging as a hobby,
             where I tweaked templates using HTML and CSS. In high school, I
-            explored design through Media & Communication and gained experience
-            with Photoshop and InDesign. Later, I earned a bachelor’s degree in
-            Marketing at BI Norwegian Business School, but after facing personal
-            challenges, I rediscovered my true passion: coding and creating
-            online.
+            explored design through <strong>Media & Communication</strong> and
+            gained experience with Photoshop and InDesign. Later, I earned a{" "}
+            <strong>bachelor’s degree</strong> in
+            <strong>Marketing</strong> at{" "}
+            <strong>BI Norwegian Business School</strong>, but after facing
+            personal challenges, I rediscovered my true passion: coding and
+            creating online.
           </p>
           <p className="mt-5 text-base break-words">
             Today, I focus on front-end development and UX/UI design, a perfect
-            blend of creativity and technology, after completing a two-year
-            degree at Noroff University.
+            blend of creativity and technology, after completing a{" "}
+            <strong>two-year degree</strong> at{" "}
+            <strong>Noroff University.</strong>
           </p>
           <p className="mt-5 text-base break-words">
             When I’m not coding, you’ll find me spending time with my dog Fie,

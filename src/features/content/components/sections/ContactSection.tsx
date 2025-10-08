@@ -42,9 +42,9 @@ export default function ContactSection() {
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-[100px] px-2 min-w-0 items-start">
         <div className="flex flex-col my-0 lg:my-auto max-w-[450px] gap-14 lg:gap-[150px] min-w-0">
           <p className="text-lightpink text-base">
-            Don't hesitate to reach out to me or connect with me on social media
+            Don´t hesitate to reach out to me or connect with me on social media
             if you have any questions, collaboration ideas, or an exciting new
-            project in mind. I'm always open to new opportunities!
+            project in mind. I´m always open to new opportunities!
           </p>
           <div>
             <h2 className="text-lightpink text-[25px] font-bold pb-[12px]">
