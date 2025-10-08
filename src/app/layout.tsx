@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased bg-background">{children}</body>
+    <html lang="en" className="glass-scroll">
+      <body className="antialiased bg-background glass-scroll">{children}</body>
     </html>
   );
 }

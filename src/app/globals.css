@@ -14,40 +14,59 @@
   --font-montserrat: "Montserrat", sans-serif;
 }
 
-
 @layer utilities {
-  /* One place to tweak the tab row height */
-  .--tabh { --tab-h: 85.99px; }
+  /* Glassy, thin, low-key scrollbar */
+  .glass-scroll {
+    /* keep layout from shifting when the bar appears */
+    scrollbar-gutter: stable both-edges;
 
-  /* Row: fixed height; children will stretch to this height */
-  .tab-row { @apply flex items-stretch overflow-hidden; height: var(--tab-h); }
-
-  /* Tab buttons: fixed height, no shrinking */
-  .tab-btn { @apply grid place-items-center shrink-0 -ml-[1px] first:ml-0; height: 100%; }
-
-  /* Spacer that acts like a filled div, width-only shrink via flex */
-  .spacer-mask {
-    flex: 1 1 328.5px;      /* grow 1, shrink 1, basis ~328.5px → spacer gives up width first */
-    height: 100%;
-    min-height: var(--tab-h);
-    max-height: var(--tab-h);
-
-    /* color fills the shape */
-    background-color: var(--spacer-color, #F9C9CF);
-
-    /* SVG as a mask that STRETCHES to the box (no aspect drama) */
-    -webkit-mask-image: var(--spacer-img);
-    mask-image: var(--spacer-img);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
+    /* Firefox */
+    scrollbar-width: thin; /* auto | thin | none */
+    scrollbar-color: var(--sb-thumb, rgba(255, 255, 255, 0.25))
+      var(--sb-track, transparent);
   }
 
-  /* Optional: a safe fallback if mask isn’t supported */
-  @supports not (mask-image: url("")) {
-    .spacer-mask { background-color: var(--spacer-color, #F9C9CF); }
+  /* WebKit (Chrome / Edge / Safari) */
+  .glass-scroll::-webkit-scrollbar {
+    width: 6px; /* slim by default */
+    height: 6px;
+    background: transparent; /* invisible rail */
+  }
+  .glass-scroll::-webkit-scrollbar-track {
+    background: var(--sb-track, rgba(255, 255, 255, 0.04)); /* faint glass */
+    border-radius: 9999px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06); /* glass edge hint */
+  }
+  .glass-scroll::-webkit-scrollbar-thumb {
+    background: var(
+      --sb-thumb,
+      rgba(255, 255, 255, 0.22)
+    ); /* subtle by default */
+    border-radius: 9999px;
+    border: 2px solid var(--sb-track, rgba(255, 255, 255, 0.04)); /* “padding” ring */
+    box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.35),
+      /* inner glow */ 0 0 0 1px rgba(0, 0, 0, 0.08); /* faint outline */
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  /* reveal a bit more on hover */
+  .glass-scroll:hover::-webkit-scrollbar {
+    width: 10px; /* expands on hover; gutter stays stable */
+    height: 10px;
+  }
+  .glass-scroll:hover::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-hover, rgba(255, 255, 255, 0.4));
+    border-color: var(--sb-track, rgba(255, 255, 255, 0.08));
+  }
+
+  /* Optional: even more hidden until hover (WebKit only) */
+  .glass-scroll.is-ghost::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  .glass-scroll.is-ghost:hover::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
   }
 }
+

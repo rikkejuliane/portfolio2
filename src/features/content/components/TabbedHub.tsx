@@ -105,9 +105,18 @@ export default function TabbedHub({
             className="object-fill select-none pointer-events-none"
           />
 
-          {/* Padding lives here */}
+          {/* CONTENT */}
           <div className="absolute inset-0 px-10 md:px-14 lg:px-[114px] pt-6 pb-[40px]">
-            <div className="h-full mx-auto max-w-[1100px] overflow-y-auto overflow-x-hidden">
+            <div
+              className="h-full mx-auto max-w-[1100px] overflow-y-auto overflow-x-hidden glass-scroll"
+              style={
+                {
+                  // tweak these per theme/tab if you like
+                  "--sb-track": "rgba(255,255,255,.06)",
+                  "--sb-thumb": "rgba(255,255,255,.22)",
+                  "--sb-thumb-hover": "rgba(255,255,255,.4)",
+                } as React.CSSProperties
+              }>
               {renderPanel ? (
                 renderPanel(active)
               ) : active === "about" ? (
