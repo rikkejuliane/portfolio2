@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-   <main>
-    <HeroSection />
-    <TabbedHub />
-    <FunFacts />
-    <Footer />
-   </main>
+    <main>
+      <HeroSection />
+      <TabbedHub />
+      <FunFacts />
+      <Footer />
+    </main>
   );
 }

@@ -49,7 +49,7 @@ export default function FunFacts({
 
   return (
     <section
-      className={`w-full pt-[164px] md:py-16 grid place-items-center font-montserrat text-chocolate ${className}`}
+      className={`w-full pt-[60px] md:pt-[130px] md:py-16 grid place-items-center font-montserrat text-chocolate ${className}`}
       onMouseEnter={() => (pausedRef.current = true)}
       onMouseLeave={() => (pausedRef.current = false)}
       aria-label="Fun facts">
