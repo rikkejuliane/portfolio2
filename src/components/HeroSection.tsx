@@ -24,7 +24,7 @@ export default function HeroSection() {
             alt="Drawing of Rikke Juliane made by Rikke Juliane"
             width={402}
             height={460}
-            className="ml-6 lg:-ml-12"
+            className="ml-0 lg:-ml-12 w-[300px] sm:w-[402px]"
           />
         </div>
         <h1 className="font-montserrat text-wine text-[30px] sm:text-[40px] md:text-[50px] lg:text-[65px] font-bold leading-tight">

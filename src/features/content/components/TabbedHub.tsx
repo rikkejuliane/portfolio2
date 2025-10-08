@@ -48,7 +48,7 @@ export default function TabbedHub({
       <div className="flex flex-col mx-auto max-w-[1322px] font-montserrat">
         {/* TABS */}
         <div
-          className="flex items-stretch h-[85.99px] pl-[3px] gap-0 p-0 -mb-[1px] text-[20px] md:text-[28px]"
+          className="flex items-stretch h-[85.99px] sm:pl-[3.5px] gap-0 p-0 -mb-[1px] text-[16px] sm:text-[20px] md:text-[28px]"
           role="tablist"
           aria-label="Content tabs">
           {TABS.map((t) => (
@@ -105,16 +105,19 @@ export default function TabbedHub({
             className="object-fill select-none pointer-events-none"
           />
 
-          <div className="absolute inset-0 overflow-y-auto overflow-x-hidden">
-            {renderPanel ? (
-              renderPanel(active)
-            ) : active === "about" ? (
-              <AboutSection />
-            ) : active === "projects" ? (
-              <ProjectsSection />
-            ) : (
-              <ContactSection />
-            )}
+          {/* Padding lives here */}
+          <div className="absolute inset-0 px-10 md:px-14 lg:px-[114px] pt-6 pb-[40px]">
+            <div className="h-full mx-auto max-w-[1100px] overflow-y-auto overflow-x-hidden">
+              {renderPanel ? (
+                renderPanel(active)
+              ) : active === "about" ? (
+                <AboutSection />
+              ) : active === "projects" ? (
+                <ProjectsSection />
+              ) : (
+                <ContactSection />
+              )}
+            </div>
           </div>
         </div>
       </div>
