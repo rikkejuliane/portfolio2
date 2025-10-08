@@ -40,7 +40,7 @@ export default function ContactSection() {
   return (
     <div className="h-full w-full font-montserrat flex justify-center px-[2px]">
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-[100px] px-2 min-w-0 items-start">
-        <div className="flex flex-col my-0 lg:my-auto max-w-[450px] gap-14 lg:gap-[150px] min-w-0">
+        <div className="flex flex-col my-0 lg:my-auto max-w-[450px] gap-14 lg:gap-[100px] min-w-0">
           <p className="text-lightpink text-base">
             Don´t hesitate to reach out to me or connect with me on social media
             if you have any questions, collaboration ideas, or an exciting new
