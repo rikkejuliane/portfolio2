@@ -59,7 +59,8 @@ export default function TabbedHub({
               type="button"
               onClick={() => setActive(t.id)}
               className={cx(
-                "h-full min-w-0 -ml-[1px] first:ml-0 grid place-items-center pt-3",
+                "group",
+                "h-full min-w-0 -ml-[1px] first:ml-0 grid place-items-center pt-3 cursor-pointer",
                 "flex-[0_1_330px]",
                 t.bg,
                 "bg-no-repeat bg-center bg-[length:100%_100%]",
@@ -106,7 +107,7 @@ export default function TabbedHub({
           />
 
           {/* CONTENT */}
-          <div className="absolute inset-0 px-10 md:px-14 lg:px-[114px] pt-6 pb-[40px]">
+          <div className="absolute inset-0 md:px-14 lg:px-[114px] pt-6 pb-[40px]">
             <div
               className="h-full mx-auto max-w-[1100px] overflow-y-auto overflow-x-hidden glass-scroll"
               style={

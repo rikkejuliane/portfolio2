@@ -13,10 +13,7 @@ export default function ContactSection() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Web3Forms required key
     formData.append("access_key", "cf5eeaf5-8f90-4b0f-93cf-8c52fcc80221");
-
-    // Optional but nice-to-have extras
     formData.append("subject", "New message from rikkejuliane.dev");
     formData.append("from_name", "Portfolio Contact Form");
     formData.append("replyto", formData.get("email") as string);
@@ -29,9 +26,7 @@ export default function ContactSection() {
       const data = await response.json();
 
       if (data.success) {
-        setResult(
-          "Form submitted successfully — I’ll get back to you soon! ✨"
-        );
+        setResult("I’ll get back to you soon! ✨");
         form.reset();
       } else {
         setResult(data.message || "Something went wrong. Please try again.");
@@ -43,17 +38,19 @@ export default function ContactSection() {
     }
   }
   return (
-    <div className="h-full w-full font-montserrat">
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-col max-w-[450px] gap-[150px]">
+    <div className="h-full w-full font-montserrat flex justify-center px-[2px]">
+      <div className="flex flex-col lg:flex-row gap-14 lg:gap-[100px] px-2 min-w-0 items-start">
+        <div className="flex flex-col my-0 lg:my-auto max-w-[450px] gap-14 lg:gap-[150px] min-w-0">
           <p className="text-lightpink text-base">
             Don't hesitate to reach out to me or connect with me on social media
             if you have any questions, collaboration ideas, or an exciting new
             project in mind. I'm always open to new opportunities!
           </p>
           <div>
-            <h2 className="text-lightpink text-[25px] font-bold">Socials:</h2>
-            <div className="flex flex-row gap-[50px]">
+            <h2 className="text-lightpink text-[25px] font-bold pb-[12px]">
+              Socials:
+            </h2>
+            <div className="flex flex-row gap-5 lg:gap-[50px]">
               <a
                 href="https://github.com/rikkejuliane"
                 target="_blank"
@@ -126,9 +123,11 @@ export default function ContactSection() {
           </div>
         </div>
 
-        <div className="flex flex-col max-w-[310px]">
-        <h2 className="text-lightpink text-[25px] font-bold">Lets get in touch!</h2>
-          <form onSubmit={onSubmit} className="space-y-4">
+        <div className="flex flex-col max-w-[310px] min-w-0">
+          <h2 className="text-lightpink text-[25px] font-bold">
+            Lets get in touch!
+          </h2>
+          <form onSubmit={onSubmit} className="space-y-2">
             {/* Honeypot (spam trap) */}
             <input
               type="checkbox"
@@ -138,43 +137,42 @@ export default function ContactSection() {
               autoComplete="off"
             />
 
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-lightpink text-sm font-semibold mb-1">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  className="w-full rounded-md bg-white/70 text-wine placeholder-wine/50 px-3 py-2 outline-none ring-1 ring-wine/20 focus:ring-2 focus:ring-wine/40"
-                  placeholder="Your name"
-                />
-              </div>
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-lightpink text-base font-bold">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                className="w-[301] h-[53] bg-[url('/input.svg')] bg-no-repeat px-3 appearance-none outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-none focus:border-transparent"
+                placeholder="Your name"
+              />
+            </div>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-lightpink text-sm font-semibold mb-1">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full rounded-md bg-white/70 text-wine placeholder-wine/50 px-3 py-2 outline-none ring-1 ring-wine/20 focus:ring-2 focus:ring-wine/40"
-                  placeholder="you@example.com"
-                />
-
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-lightpink text-base font-bold">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                className="w-[301] h-[53] bg-[url('/input.svg')] bg-no-repeat px-3 appearance-none outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-none focus:border-transparent"
+                placeholder="you@example.com"
+              />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-lightpink text-sm font-semibold mb-1">
+                className="block text-lightpink text-base font-bold">
                 Message
               </label>
               <textarea
@@ -182,25 +180,27 @@ export default function ContactSection() {
                 name="message"
                 required
                 rows={6}
-                className="w-full rounded-md bg-white/70 text-wine placeholder-wine/50 px-3 py-2 outline-none ring-1 ring-wine/20 focus:ring-2 focus:ring-wine/40 glass-scroll"
+                className="w-[300] h-[181px] bg-[url('/textarea.svg')] bg-no-repeat px-3 py-3 appearance-none outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-none focus:border-transparent"
                 placeholder="Tell me a bit about your project…"
               />
             </div>
 
-            <div className="pt-2 flex flex-col items-center gap-4">
-              <button
-                type="submit"
-                disabled={submitting}
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-md font-bold bg-wine text-lightpink hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed transition">
-                {submitting ? "Sending…" : "Send message"}
-              </button>
-
-              <span
-                className="text-lightpink text-sm"
-                role="status"
-                aria-live="polite">
-                {result}
-              </span>
+            <div className="flex flex-col items-center justify-center">
+              {submitting || result ? (
+                <span
+                  className="text-lightpink text-sm text-center"
+                  role="status"
+                  aria-live="polite">
+                  {result || "Sending…"}
+                </span>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="text-lightpink font-bold text-[20px] transition-transform duration-150 motion-safe:hover:scale-[1.06] will-change-transform cursor-pointer mb-5 lg:mb-0">
+                  {"<LetsConnect /> "}
+                </button>
+              )}
             </div>
           </form>
         </div>

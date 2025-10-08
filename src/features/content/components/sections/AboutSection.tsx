@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <div className="h-full w-full font-montserrat">
+    <div className="h-full w-full font-montserrat px-4">
       {/* Stack on small; 2 cols on lg. min-w-0 lets text wrap instead of pushing wide */}
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,696px)_auto] items-start gap-8 lg:gap-[100px] min-w-0">
         {/* LEFT: text */}
