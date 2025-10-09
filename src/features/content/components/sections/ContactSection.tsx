@@ -38,10 +38,10 @@ export default function ContactSection() {
     }
   }
   return (
-    <div className="h-full w-full font-montserrat flex justify-center px-[2px]">
+    <div className="h-full w-full font-montserrat flex justify-center px-[5px]">
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-[100px] px-2 min-w-0 items-start">
-        <div className="flex flex-col my-0 lg:my-auto max-w-[450px] gap-14 lg:gap-[100px] min-w-0">
-          <p className="text-lightpink text-base">
+        <div className="flex flex-col my-0 lg:my-auto  sm:max-w-[450px] gap-14 lg:gap-[100px] min-w-0">
+          <p className="text-lightpink text-base w-[310px] md:w-[450px]">
             Don´t hesitate to reach out to me or connect with me on social media
             if you have any questions, collaboration ideas, or an exciting new
             project in mind. I´m always open to new opportunities!
