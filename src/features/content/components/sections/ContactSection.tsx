@@ -1,6 +1,37 @@
 "use client";
 import * as React from "react";
 
+const WARM_URLS = [
+  "/panelRose.svg",
+  "/panelBrown.svg",
+  "/aboutTab.svg",
+  "/projectsTab.svg",
+  "/contactTab.svg",
+  "/spaceTab.svg",
+  "/spaceTabRose.svg",
+  "/spaceTabBrown.svg",
+];
+
+function AssetWarmup() {
+  // 1) Preload via <img> (works for CSS backgrounds too)
+  // 2) Also kick off JS-side decode for good measure
+  React.useEffect(() => {
+    WARM_URLS.forEach((u) => {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = u;
+    });
+  }, []);
+
+  return (
+    <div aria-hidden className="absolute w-0 h-0 overflow-hidden">
+      {WARM_URLS.map((u) => (
+        <img key={u} src={u} alt="" />
+      ))}
+    </div>
+  );
+}
+
 export default function ContactSection() {
   const [result, setResult] = React.useState<string>("");
   const [submitting, setSubmitting] = React.useState(false);
@@ -39,6 +70,7 @@ export default function ContactSection() {
   }
   return (
     <div className="h-full w-full font-montserrat flex justify-center px-[5px]">
+      <AssetWarmup />
       <div className="flex flex-col lg:flex-row gap-14 lg:gap-[100px] px-2 min-w-0 items-start">
         <div className="flex flex-col my-0 lg:my-auto  sm:max-w-[450px] gap-14 lg:gap-[100px] min-w-0">
           <p className="text-lightpink text-base w-[310px] md:w-[450px]">
