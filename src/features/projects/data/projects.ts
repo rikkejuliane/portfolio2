@@ -185,142 +185,146 @@ export const PROJECTS: Project[] = [
     slug: "postly",
     title: "Postly",
     meta: "academic",
-    tags: [],
+    tags: ["javascript", "html", "tailwind", "vite"],
     links: [
-      { label: "repo", url: "" },
-      { label: "live", url: "" },
+      { label: "repo", url: "https://github.com/rikkejuliane/postly-public" },
+      { label: "live", url: "https://postly-rikkejuliane.netlify.app/" },
     ],
     description: `
+    Postly is a collaborative social media application developed as part of the JavaScript 2 course assignment at Noroff. Built together with Nikolas Bishop, I worked on both frontend functionality and the styling/design of the application.
+
+    The project was later extended in the CSS Frameworks course, where I took full responsibility for styling the app using Tailwind CSS — my first experience with the framework. This allowed me to shape the entire visual identity and ensure the UI was responsive, consistent, and accessible.
+
+    The app connects to the Noroff Social Media API and focuses on core CRUD functionality, error handling, and social interactivity. Users can create, edit, and delete posts, react and comment on content, and build a personalized feed by following other users.
     `,
-    keyFeatures: ["", ""],
-    others: [
-      `
-      `,
+    keyFeatures: [
+      "**Posts** - Create, edit, delete, and view posts with support for tags, media, and comments.",
+      "**Social features** - Follow/unfollow users, react to posts with emojis, leave comments.",
+      "**Search & filter** - Find posts via keywords or tags.",
+      "**Error handling** - Clear error messages for invalid logins, failed requests, or bad inputs.",
     ],
-    screenshots: [{ src: "", alt: "", caption: "" }],
+    screenshots: [{ src: "/postly.jpg", alt: "Home", caption: "Landing page" }],
   },
 
   {
-    id: "",
-    slug: "",
-    title: "",
-    meta: "academic", // or "personal" | "professional"
-    tags: [],
+    id: "nyewyears2025",
+    slug: "newyears2025",
+    title: "New years resolutions 2025",
+    meta: "personal",
+    tags: ["html", "css", "javascript"],
     links: [
-      { label: "repo", url: "" },
-      { label: "live", url: "" },
+      {
+        label: "repo",
+        url: "https://github.com/rikkejuliane/newyearsresolution-shecodes",
+      },
+      {
+        label: "live",
+        url: "https://rikkejuliane.github.io/newyearsresolution-shecodes/",
+      },
     ],
     description: `
+    This project was built for the SheCodes.io January 2025 New Year’s Resolutions Challenge. The goal was to create a fun landing page to showcase my personal resolutions for the year — but I ended up turning it into a fully interactive goal-tracking app that I actually use every day.
+
+    Everything is coded in a single HTML file with embedded CSS and JavaScript. While it’s desktop-only and intentionally kept simple, it’s become a tool I keep open in a browser tab to stay motivated and track progress on my goals throughout the year.
     `,
-    keyFeatures: ["", ""],
-    others: [
-      `
-      `,
+    keyFeatures: [
+      "**Goal 1: Read 15 books** - A form to add finished books (title, rating, comments, cover image). Completed books appear in a styled card list, while a progress bar fills as I get closer to my 15-book goal.",
+      "**Goal 2: Work out 100 times** - A grid of 100 colorful squares that I fill in as I work out. Each workout also gets logged in a notes list (e.g. “Played tennis,” “Leg day”), helping me track both progress and variety.",
+      "**Goal 3: Spend less money** - A counter that tracks “no-spend days.” Each day saved fills a gradient jar with color, giving me a visual reward for better habits.",
+      "Goal 4: Mood tracker → A yearly calendar where I can record my daily mood with one of six emojis. Over time, the tracker gives me insight into emotional patterns and balance.",
     ],
-    screenshots: [{ src: "", alt: "", caption: "" }],
+    screenshots: [{ src: "/nye25.jpg", alt: "Home", caption: "Landing page" }],
   },
 
   {
-    id: "",
-    slug: "",
-    title: "",
-    meta: "academic", // or "personal" | "professional"
-    tags: [],
+    id: "tmd",
+    slug: "tmd",
+    title: "The Mediterranean Dream",
+    meta: "academic",
+    tags: ["html", "css", "javascript", "tinymce"],
     links: [
-      { label: "repo", url: "" },
-      { label: "live", url: "" },
+      {
+        label: "repo",
+        url: "https://github.com/rikkejuliane/PE1-rikkejuliane",
+      },
+      { label: "live", url: "https://pe1-rikkejuliane.netlify.app/" },
     ],
     description: `
+    The Mediterranean Dream is a responsive blogging platform built for my Project Exam 1 at Noroff. The goal was to create a modern, user-friendly website where readers can explore travel posts, while the admin (blog owner) has full control over managing content.
+
+    The site was designed in Figma, developed with semantic HTML, CSS, and JavaScript, and deployed via Netlify. It integrates the Noroff Blog API and the TinyMCE rich text editor to give the blog owner a seamless post creation and editing experience.
+
+    This project taught me how to combine API integration, CRUD functionality, responsive layouts, accessibility standards, and admin authentication into one cohesive product.
     `,
-    keyFeatures: ["", ""],
-    others: [
-      `
-      `,
+    keyFeatures: [
+      "**Blog feed** - Interactive hero carousel with the latest posts and a responsive grid layout to browse, search, and filter posts by tags. Pagination supports browsing beyond the initial 12 posts.",
+      "**Single post view** - Dedicated post pages display the title, author, date, banner image, and full content, with shareable URLs containing the post ID.",
+      "**Admin dashboard** - Secure login system with full CRUD functionality (create, edit, delete posts). Integrated with TinyMCE for rich text editing.",
     ],
-    screenshots: [{ src: "", alt: "", caption: "" }],
+    screenshots: [{ src: "/tmd.jpg", alt: "Home", caption: "Landing page" }],
   },
 
   {
-    id: "",
-    slug: "",
-    title: "",
-    meta: "academic", // or "personal" | "professional"
-    tags: [],
+    id: "csm",
+    slug: "csm",
+    title: "Community science museum ",
+    meta: "academic",
+    tags: ["html", "css"],
     links: [
-      { label: "repo", url: "" },
-      { label: "live", url: "" },
+      {
+        label: "repo",
+        url: "https://github.com/rikkejuliane/sp1-rikkejuliane",
+      },
+      {
+        label: "live",
+        url: "https://rikkejuliane.github.io/sp1-rikkejuliane/",
+      },
     ],
     description: `
+    The Community Science Museum website was developed as my Semester Project 1 at Noroff. The goal was to design and build a modern, accessible, and engaging website tailored to the museum’s target audience: children aged 7–15 and families with young children.
+
+    The site combines playful visuals, clear navigation, and informative content to inspire curiosity about science and encourage museum visits. It includes pages for exhibitions, contributions, visitor info, and legal documents, all built with semantic HTML and responsive CSS.
     `,
-    keyFeatures: ["", ""],
-    others: [
-      `
-      `,
+    keyFeatures: [
+      "**Homepage** - Impactful imagery and messaging designed to capture children’s attention and highlight the museum’s mission.",
+      "**Exhibitions & Contributions** - Dedicated sections outlining current events and opportunities for visitors to support or participate.",
+      "**Contact page** - Includes opening hours, address, phone number, and a simple inquiry form.",
+      "**Custom visuals** - Many images generated with ChatGPT, providing a unique creative touch.",
     ],
-    screenshots: [{ src: "", alt: "", caption: "" }],
+
+    screenshots: [{ src: "/csm.jpg", alt: "Home", caption: "Landing page" }],
   },
 
   {
-    id: "",
-    slug: "",
-    title: "",
-    meta: "academic", // or "personal" | "professional"
-    tags: [],
+    id: "rainydays",
+    slug: "rainydays",
+    title: "Rainydays",
+    meta: "academic",
+    tags: ["html", "css", "javascript"],
     links: [
-      { label: "repo", url: "" },
-      { label: "live", url: "" },
+      { label: "repo", url: "https://github.com/rikkejuliane/rainydays-js" },
+      {
+        label: "live",
+        url: "https://rikkejuliane.github.io/rainydays-js/index.html",
+      },
     ],
     description: `
-    `,
-    keyFeatures: ["", ""],
-    others: [
-      `
-      `,
-    ],
-    screenshots: [{ src: "", alt: "", caption: "" }],
-  },
+    Rainy Days is an e-commerce website developed across two course assignments at Noroff: HTML & CSS and JavaScript 1.
 
-  {
-    id: "",
-    slug: "",
-    title: "",
-    meta: "academic", // or "personal" | "professional"
-    tags: [],
-    links: [
-      { label: "repo", url: "" },
-      { label: "live", url: "" },
-    ],
-    description: `
-    `,
-    keyFeatures: ["", ""],
-    others: [
-      `
-      `,
-    ],
-    screenshots: [{ src: "", alt: "", caption: "" }],
-  },
+    The project began as a static, responsive site built with semantic HTML and CSS. In the second phase, I extended it by integrating the Rainy Days API, turning it into a dynamic online store with interactive product listings, basket functionality, and checkout flow.
 
-  {
-    id: "",
-    slug: "",
-    title: "",
-    meta: "academic", // or "personal" | "professional"
-    tags: [],
-    links: [
-      { label: "repo", url: "" },
-      { label: "live", url: "" },
-    ],
-    description: `
+    This is my first ever project and website.
     `,
-    keyFeatures: ["", ""],
-    others: [
-      `
-      `,
+    keyFeatures: [
+      "**Accessibility (WCAG)** - Semantic HTML, unique meta descriptions, structured headings, and validation with WAVE.",
+      "**Dynamic product system** - Products fetched from the Rainy Days API and displayed asynchronously, with detailed product pages.",
+      "**Basket functionality** - Add/remove items, view live cart summary, and complete checkout with confirmation screen.",
+      "**Filter & sort** - Users can filter products by category or gender for easier navigation.",
     ],
-    screenshots: [{ src: "", alt: "", caption: "" }],
+    screenshots: [
+      { src: "/rainydays.jpg", alt: "Home", caption: "Landing page" },
+    ],
   },
-
-  // ...add all the rest of your archive entries here
 ];
 
 // ──────────────────────────────────────────────────────────────────────────────
