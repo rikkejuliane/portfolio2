@@ -104,6 +104,7 @@ export default function TabbedHub({
             fill
             sizes="(max-width: 1322px) 100vw, 1322px"
             className="object-fill select-none pointer-events-none"
+            priority
           />
 
           {/* CONTENT */}
