@@ -9,19 +9,19 @@ export default function ProjectsSection() {
         <h2 className="text-wine text-[25px] font-bold sm:pl-10">Featured:</h2>
         <div className="flex flex-row flex-wrap justify-center gap-4">
           {/* Holidaze */}
-          <div className="bg-[url('/postit.png')] bg-no-repeat bg-contain w-[379px] h-[412px] flex flex-col justify-center items-center">
+          <div className="bg-[url('/postit.png')] bg-no-repeat bg-contain w-[379px] h-[412px] flex flex-col pt-12 sm:pt-0 justify-none sm:justify-center items-center">
             <div>
               <Image
                 src="/holidaze.jpg"
                 alt="Screenshot of Holidaze project"
                 width={311}
                 height={165}
-                className="pt-6"
+                className="sm:pt-6 w-[250px] sm:w-[311px] "
               />
               <h3 className="text-[18px] font-black text-black py-[10px]">
                 Holidaze - PE2
               </h3>
-              <p className="w-[314px] text-base">
+              <p className="w-[260px] sm:w-[314px] text-xs sm:text-base">
                 Holidaze is a responsive booking app for travelers and venue
                 managers, built with Next.js, TypeScript, and Tailwind.
               </p>
