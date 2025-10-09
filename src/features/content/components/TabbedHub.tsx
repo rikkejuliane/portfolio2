@@ -108,9 +108,9 @@ export default function TabbedHub({
           />
 
           {/* CONTENT */}
-          <div className="absolute inset-0 md:px-14 lg:px-[114px] pt-6 pb-[40px]">
+          <div className="absolute inset-0 pt-6 pb-[40px]">
             <div
-              className="h-full mx-auto max-w-[1100px] overflow-y-auto overflow-x-hidden glass-scroll"
+              className="h-full mx-auto max-w-[1200px] overflow-y-auto overflow-x-hidden glass-scroll"
               style={
                 {
                   // tweak these per theme/tab if you like
