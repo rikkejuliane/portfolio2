@@ -45,7 +45,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT: */}
         <div className="flex flex-col md:flex-row lg:flex-col justify-center lg:justify-normal items-center lg:items-end gap-4 shrink-0 mb-6 lg:mb-0">
           <Image
             src="/tennis.png"
