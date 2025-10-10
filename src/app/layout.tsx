@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import HeroSection from "@/components/HeroSection";
+import FunFacts from "@/components/FunFacts";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   // Basics
@@ -38,7 +41,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="glass-scroll">
-      <body className="antialiased bg-background glass-scroll">{children}</body>
+      <body className="antialiased bg-background glass-scroll">
+        <header>
+          <HeroSection />
+        </header>
+        <main>
+          {children}
+          <FunFacts />
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+      </body>
     </html>
   );
 }

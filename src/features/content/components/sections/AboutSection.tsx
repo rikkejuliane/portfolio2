@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function AboutSection() {
   return (
     <div className="h-full w-full font-montserrat px-14 lg:px-[114px]">
-      {/* Stack on small; 2 cols on lg. min-w-0 lets text wrap instead of pushing wide */}
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,696px)_auto] items-start gap-8 lg:gap-[100px] min-w-0">
         {/* LEFT: text */}
         <div className="flex flex-col min-w-0 lg:max-w-[696px]">
@@ -46,7 +45,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* RIGHT: images (never exceed column width) */}
+        {/* RIGHT */}
         <div className="flex flex-col md:flex-row lg:flex-col justify-center lg:justify-normal items-center lg:items-end gap-4 shrink-0 mb-6 lg:mb-0">
           <Image
             src="/tennis.png"

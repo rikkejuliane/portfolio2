@@ -50,8 +50,8 @@ export const PROJECTS: Project[] = [
       "mapbox gl",
     ],
     links: [
-      { label: "repo", url: "https://github.com/yourname/holidaze" },
-      { label: "live", url: "https://github.com/rikkejuliane/HOLIDAZE" },
+      { label: "repo", url: "https://github.com/rikkejuliane/HOLIDAZE" },
+      { label: "live", url: "https://holidaze-rikkejuliane.netlify.app/" },
     ],
     description: `
     Holidaze is a modern accommodation booking platform built as my Project Exam 2 at Noroff. 
@@ -77,13 +77,11 @@ export const PROJECTS: Project[] = [
       // Optional — only include if relevant
       // "Client feedback: Loved the instant search and clean UX.",
     ],
-    screenshots: [
-      { src: "/holidazeBig.jpg", alt: "Home", caption: "Landing page" },
-    ],
+    screenshots: [{ src: "/holidazeBig.jpg", alt: "Home" }],
   },
   {
     id: "biddy",
-    slug: "biddy-auction",
+    slug: "biddy",
     title: "Biddy",
     meta: "academic",
     tags: ["html", "tailwind", "javascript", "vite"],
@@ -105,13 +103,11 @@ export const PROJECTS: Project[] = [
       "**Dynamic UI Elements** - Real-time search bar, category tags with icons, and clear logged-in vs logged-out views.",
       "**Admin / User Profiles** - Edit profile details securely, manage personal listings, and view auction outcomes.",
     ],
-    screenshots: [
-      { src: "/biddyBig.jpg", alt: "Home", caption: "Landing page" },
-    ],
+    screenshots: [{ src: "/biddyBig.jpg", alt: "Home" }],
   },
   {
     id: "roots",
-    slug: "roots-street-food",
+    slug: "roots",
     title: "ROOTS Street Food",
     meta: "professional",
     tags: ["nextjs", "react", "typescript", "tailwind"],
@@ -142,9 +138,7 @@ export const PROJECTS: Project[] = [
      - Marjan Bolic, Resturant Owner
      `,
     ],
-    screenshots: [
-      { src: "/rootsBig.jpg", alt: "Home", caption: "Landing page" },
-    ],
+    screenshots: [{ src: "/rootsBig.jpg", alt: "Home" }],
   },
 
   // ── Archive items (examples) ────────────────────────────────────────────────
@@ -176,9 +170,7 @@ export const PROJECTS: Project[] = [
       "**Testing** -  Unit and integration tests with Jest + React Testing Library, including mocked Zustand and router, plus cart state edge cases tested.",
     ],
 
-    screenshots: [
-      { src: "/everlystShopping.jpg", alt: "Home", caption: "Landing page" },
-    ],
+    screenshots: [{ src: "/everlystShopping.jpg", alt: "Home" }],
   },
   {
     id: "postly",
@@ -203,7 +195,7 @@ export const PROJECTS: Project[] = [
       "**Search & filter** - Find posts via keywords or tags.",
       "**Error handling** - Clear error messages for invalid logins, failed requests, or bad inputs.",
     ],
-    screenshots: [{ src: "/postly.jpg", alt: "Home", caption: "Landing page" }],
+    screenshots: [{ src: "/postly.jpg", alt: "Home" }],
   },
 
   {
@@ -233,7 +225,36 @@ export const PROJECTS: Project[] = [
       "**Goal 3: Spend less money** - A counter that tracks “no-spend days.” Each day saved fills a gradient jar with color, giving me a visual reward for better habits.",
       "Goal 4: Mood tracker → A yearly calendar where I can record my daily mood with one of six emojis. Over time, the tracker gives me insight into emotional patterns and balance.",
     ],
-    screenshots: [{ src: "/nye25.jpg", alt: "Home", caption: "Landing page" }],
+    screenshots: [{ src: "/nye25.jpg", alt: "Home" }],
+  },
+
+  {
+    id: "first-portfolio",
+    slug: "first-portfolio",
+    title: "My First Portfolio",
+    meta: "personal",
+    tags: ["html", "css", "javascript"],
+    links: [
+      {
+        label: "repo",
+        url: "https://github.com/rikkejuliane/portfolio1", // update if you have the actual repo
+      },
+      {
+        label: "live",
+        url: "https://rikkeja-old.netlify.app/",
+      },
+    ],
+    description: `
+    This was my very first portfolio website — the starting point of my front-end journey. 
+    It was built with basic HTML, CSS, and a touch of JavaScript before I learned frameworks 
+    like React and Next.js. 
+  
+    The design focused on clean simplicity and accessibility, showing my early projects and 
+    a short introduction about me. Looking back, it represents the foundation of how far I’ve come, 
+    and I still love how it captured my enthusiasm for learning and creating web experiences from scratch.
+    `,
+    keyFeatures: [],
+    screenshots: [{ src: "/Firstportfolio.jpg", alt: "My first portfolio" }],
   },
 
   {
@@ -261,7 +282,7 @@ export const PROJECTS: Project[] = [
       "**Single post view** - Dedicated post pages display the title, author, date, banner image, and full content, with shareable URLs containing the post ID.",
       "**Admin dashboard** - Secure login system with full CRUD functionality (create, edit, delete posts). Integrated with TinyMCE for rich text editing.",
     ],
-    screenshots: [{ src: "/tmd.jpg", alt: "Home", caption: "Landing page" }],
+    screenshots: [{ src: "/tmd.jpg", alt: "Home" }],
   },
 
   {
@@ -292,7 +313,7 @@ export const PROJECTS: Project[] = [
       "**Custom visuals** - Many images generated with ChatGPT, providing a unique creative touch.",
     ],
 
-    screenshots: [{ src: "/csm.jpg", alt: "Home", caption: "Landing page" }],
+    screenshots: [{ src: "/csm.jpg", alt: "Home" }],
   },
 
   {
@@ -321,9 +342,7 @@ export const PROJECTS: Project[] = [
       "**Basket functionality** - Add/remove items, view live cart summary, and complete checkout with confirmation screen.",
       "**Filter & sort** - Users can filter products by category or gender for easier navigation.",
     ],
-    screenshots: [
-      { src: "/rainydays.jpg", alt: "Home", caption: "Landing page" },
-    ],
+    screenshots: [{ src: "/rainydays.jpg", alt: "Home" }],
   },
 ];
 
@@ -333,18 +352,7 @@ export const PROJECTS: Project[] = [
 
 export const bySlug = (slug: string) => PROJECTS.find((p) => p.slug === slug);
 
-export const featuredProjects = () =>
-  PROJECTS.filter((p) => p.featured).sort((a, b) =>
-    (b.date ?? "").localeCompare(a.date ?? "")
-  );
-
-export const archiveProjects = () =>
-  PROJECTS.filter((p) => !p.featured).sort((a, b) =>
-    (b.date ?? "").localeCompare(a.date ?? "")
-  );
-
 export function getPrevNext(slug: string) {
-  // Prev/next in the order of PROJECTS (you can sort by date if you prefer)
   const idx = PROJECTS.findIndex((p) => p.slug === slug);
   if (idx === -1) return { prev: null, next: null };
   return {

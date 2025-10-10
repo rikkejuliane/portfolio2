@@ -26,7 +26,7 @@ export default function ProjectsSection() {
                 managers, built with Next.js, TypeScript, and Tailwind.
               </p>
               <Link
-                href="placeholder/holidaze"
+                href="projects/holidaze"
                 className="font-bold text-[15px] text-center flex justify-center pt-3 transition-transform duration-150 motion-safe:hover:scale-[1.06] will-change-transform cursor-pointer">
                 {"<ViewProject />"}
               </Link>
@@ -51,7 +51,7 @@ export default function ProjectsSection() {
                 bids, and track auctions, starting with 1000 credits.
               </p>
               <Link
-                href="placeholder/biddy"
+                href="projects/biddy"
                 className="font-bold text-[15px] text-center flex justify-center pt-3 transition-transform duration-150 motion-safe:hover:scale-[1.06] will-change-transform cursor-pointer">
                 {"<ViewProject />"}
               </Link>
@@ -76,7 +76,7 @@ export default function ProjectsSection() {
                 TypeScript, and Tailwind CSS.
               </p>
               <Link
-                href="placeholder/roots"
+                href="projects/roots"
                 className="font-bold text-[15px] text-center flex justify-center pt-3 transition-transform duration-150 motion-safe:hover:scale-[1.06] will-change-transform cursor-pointer">
                 {"<ViewProject />"}
               </Link>
@@ -88,7 +88,7 @@ export default function ProjectsSection() {
         </h2>
         <div className="flex flex-wrap justify-center sm:justify-normal gap-[80px] pt-4 sm:pl-10 pb-8">
           {/* Everlyst */}
-          <Link href="placeholder-everlyst">
+          <Link href="projects/everlyst">
             <Image
               src="/folderEverlyst.png"
               alt="Folder for everlyst project"
@@ -98,7 +98,7 @@ export default function ProjectsSection() {
           </Link>
 
           {/* Everlyst */}
-          <Link href="placeholder-postly">
+          <Link href="projects/postly">
             <Image
               src="/folderPostly.png"
               alt="Folder for postly project"
@@ -108,7 +108,7 @@ export default function ProjectsSection() {
           </Link>
 
           {/* New years resulotions */}
-          <Link href="placeholder-nye">
+          <Link href="projects/newyears2025">
             <Image
               src="/folderNye.png"
               alt="Folder for New years resolutions project"
@@ -118,7 +118,7 @@ export default function ProjectsSection() {
           </Link>
 
           {/* My first portfolio */}
-          <Link href="placeholder-firstPortfolio">
+          <Link href="projects/first-portfolio">
             <Image
               src="/folderFirstPort.png"
               alt="Folder for my first portfolio project"
@@ -128,7 +128,7 @@ export default function ProjectsSection() {
           </Link>
 
           {/* The mediterranean dream*/}
-          <Link href="placeholder-tmd">
+          <Link href="projects/tmd">
             <Image
               src="/folderTmd.png"
               alt="Folder for The mediterranean dream project"
@@ -138,7 +138,7 @@ export default function ProjectsSection() {
           </Link>
 
           {/* The Community science museum */}
-          <Link href="placeholder-CSM">
+          <Link href="projects/csm">
             <Image
               src="/folderCSM.png"
               alt="Folder for The community science museum project"
@@ -148,7 +148,7 @@ export default function ProjectsSection() {
           </Link>
 
           {/* Rainydays*/}
-          <Link href="placeholder-rainydays">
+          <Link href="projects/rainydays">
             <Image
               src="/folderRainydays.png"
               alt="Folder for rainydays project"
