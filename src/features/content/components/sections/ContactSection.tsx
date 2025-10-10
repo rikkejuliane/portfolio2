@@ -31,7 +31,7 @@ export default function ContactSection() {
       } else {
         setResult(data.message || "Something went wrong. Please try again.");
       }
-    } catch (err) {
+    } catch {
       setResult("Network error. Please try again.");
     } finally {
       setSubmitting(false);
@@ -128,7 +128,6 @@ export default function ContactSection() {
             Lets get in touch!
           </h2>
           <form onSubmit={onSubmit} className="space-y-2">
-            {/* Honeypot (spam trap) */}
             <input
               type="checkbox"
               name="botcheck"

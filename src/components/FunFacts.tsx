@@ -71,8 +71,7 @@ export default function FunFacts({
               ? "opacity-100 scale-[1.0] translate-y-0"
               : "opacity-0 scale-[0.98] -translate-y-1",
           ].join(" ")}
-          key={idx} // helps React reset transition state per fact
-        >
+          key={idx}>
           {items[idx]}
         </div>
 

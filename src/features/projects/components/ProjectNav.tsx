@@ -9,12 +9,11 @@ type ProjectNavProps = {
 };
 
 export default function ProjectNav({ prev, next }: ProjectNavProps) {
-  // nothing to show? don't render anything
   if (!prev && !next) return null;
 
   return (
     <nav className="flex flex-wrap items-center justify-center gap-1 sm:gap-8 font-bold text-[14px] text-wine">
-      {/* ─── PREV ─────────────────────────────────────────── */}
+      {/* prev */}
       {prev && (
         <Link
           href={`/projects/${prev.slug}`}
@@ -41,7 +40,7 @@ export default function ProjectNav({ prev, next }: ProjectNavProps) {
 
       {prev && next && <div className="h-[15px] w-[1px] bg-wine" />}
 
-      {/* ─── NEXT ─────────────────────────────────────────── */}
+      {/* next */}
       {next && (
         <Link
           href={`/projects/${next.slug}`}

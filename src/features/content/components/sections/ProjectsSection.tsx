@@ -6,7 +6,9 @@ export default function ProjectsSection() {
   return (
     <div className="h-full w-full font-montserrat px-[10px]">
       <div className="flex flex-col">
-        <h2 className="text-wine text-[25px] font-bold pl-4 sm:pl-10">Featured:</h2>
+        <h2 className="text-wine text-[25px] font-bold pl-4 sm:pl-10">
+          Featured:
+        </h2>
         <div className="flex flex-row flex-wrap justify-center gap-4">
           {/* Holidaze */}
           <div className="bg-[url('/postit.png')] bg-no-repeat bg-center bg-[length:100%_100%] w-[379px] h-[412px] flex flex-col justify-center items-center">
@@ -72,8 +74,8 @@ export default function ProjectsSection() {
                 ROOTS FastFood Posedarje
               </h3>
               <p className="w-[260px] sm:w-[314px] text-xs sm:text-base">
-                A modern, responsive restaurant website built with Next.js,
-                TypeScript, and Tailwind CSS.
+                A modern, responsive restaurant website built with Next.js,
+                TypeScript, and Tailwind CSS.
               </p>
               <Link
                 href="projects/roots"

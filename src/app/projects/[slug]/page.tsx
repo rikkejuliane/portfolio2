@@ -148,12 +148,10 @@ export default function ProjectArticle({
                 </h2>
                 <div className="space-y-4">
                   {project.others.map((o, i) => {
-                    // Split text into paragraphs
                     const paragraphs = o
                       .trim()
                       .split(/\n\s*\n/)
                       .map((p, j) => {
-                        // Replace **bold** with <strong>bold</strong>
                         const html = p.replace(
                           /\*\*(.*?)\*\*/g,
                           "<strong>$1</strong>"

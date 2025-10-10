@@ -356,4 +356,3 @@ export function getPrevNext(slug: string) {
     next: idx < PROJECTS.length - 1 ? PROJECTS[idx + 1] : null,
   };
 }
-

@@ -113,7 +113,6 @@ export default function TabbedHub({
               className="h-full mx-auto max-w-[1200px] overflow-y-auto overflow-x-hidden glass-scroll"
               style={
                 {
-                  // tweak these per theme/tab if you like
                   "--sb-track": "rgba(255,255,255,.06)",
                   "--sb-thumb": "rgba(255,255,255,.22)",
                   "--sb-thumb-hover": "rgba(255,255,255,.4)",

@@ -5,7 +5,6 @@ import FunFacts from "@/components/FunFacts";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  // Basics
   title: "Rikke Juliane — Frontend Developer & UX/UI",
   description:
     "Portfolio of Rikke Juliane: frontend developer focused on elegant UX/UI, performant React/Next.js, and detail-oriented design systems.",
@@ -23,8 +22,6 @@ export const metadata: Metadata = {
 
   metadataBase: new URL("https://rikkejuliane.netlify.app/"),
   alternates: { canonical: "/" },
-
-  // Open Graph (link previews)
   openGraph: {
     title: "Rikke Juliane — Frontend Developer & UX/UI",
     description:
