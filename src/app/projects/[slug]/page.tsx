@@ -1,21 +1,15 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import { PROJECTS, bySlug } from "@/features/projects/data/projects";
 import ProjectNav from "@/features/projects/components/ProjectNav";
 import CloseButton from "@/features/projects/components/CloseButton";
 import ShareButton from "@/features/projects/components/ShareButton";
 
-// ────────────────────────────────
-// Prebuild all articles
-// ────────────────────────────────
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
 }
 
-// ────────────────────────────────
-// SEO metadata
-// ────────────────────────────────
+// SEO METADATA
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const p = bySlug(params.slug);
   if (!p) return {};
@@ -26,9 +20,6 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-// ────────────────────────────────
-// Article page
-// ────────────────────────────────
 export default function ProjectArticle({
   params,
 }: {
@@ -46,7 +37,6 @@ export default function ProjectArticle({
       </p>
     ));
 
-  // Format key features (bold title part)
   function renderFeature(item: string) {
     const m = item.match(/^\*\*(.+?)\*\*\s*-\s*(.+)$/);
     if (!m) return <span>{item}</span>;
@@ -56,7 +46,6 @@ export default function ProjectArticle({
       </span>
     );
   }
-
   return (
     <section className="mt-[60px] md:mt-[275px] mb-20 font-montserrat">
       <div
@@ -73,7 +62,7 @@ export default function ProjectArticle({
         {/* Content area */}
         <div className="absolute inset-0 px-14 lg:px-[114px] py-18">
           <article className="h-full mx-auto max-w-[730px] overflow-y-auto overflow-x-hidden glass-scroll">
-            {/* ─────────── Header ─────────── */}
+            {/* header*/}
             <header className="mb-6">
               <div className="flex flex-col text-wine">
                 <div className="flex flex-row flex-wrap-reverse gap-4 sm:gap-0 justify-between items-center">
@@ -119,7 +108,6 @@ export default function ProjectArticle({
                     ))}
                   </div>
                 </div>
-
                 <div>
                   <h2 className="text-[14px] font-bold pt-[20px] text-wine">
                     TECHNOLOGIES:
@@ -136,11 +124,9 @@ export default function ProjectArticle({
                 </div>
               </div>
             </header>
-
             {/* Description */}
             <div className="w-full h-[1px] bg-wine my-[20px]"></div>
             <section className="my-[20px]">{paragraphs}</section>
-
             {/* Key features */}
             {project.keyFeatures?.length ? (
               <section className="mb-8">
@@ -154,15 +140,38 @@ export default function ProjectArticle({
                 </ul>
               </section>
             ) : null}
-
             {/* Others (like feedback) */}
             {project.others?.length ? (
               <section className="mb-8">
-                <h2 className="text-xl font-bold mb-3">Other</h2>
+                <h2 className="text-[14px] font-bold pt-[20px] text-wine">
+                  Other:
+                </h2>
                 <div className="space-y-4">
-                  {project.others.map((o, i) => (
-                    <p key={i}>{o}</p>
-                  ))}
+                  {project.others.map((o, i) => {
+                    // Split text into paragraphs
+                    const paragraphs = o
+                      .trim()
+                      .split(/\n\s*\n/)
+                      .map((p, j) => {
+                        // Replace **bold** with <strong>bold</strong>
+                        const html = p.replace(
+                          /\*\*(.*?)\*\*/g,
+                          "<strong>$1</strong>"
+                        );
+                        return (
+                          <p
+                            key={j}
+                            className="leading-relaxed"
+                            dangerouslySetInnerHTML={{ __html: html }}
+                          />
+                        );
+                      });
+                    return (
+                      <div key={i} className="space-y-3">
+                        {paragraphs}
+                      </div>
+                    );
+                  })}
                 </div>
               </section>
             ) : null}
@@ -208,7 +217,7 @@ export default function ProjectArticle({
                   ) ?? null
                 }
               />
-                <ShareButton />
+              <ShareButton />
             </div>
           </article>
         </div>

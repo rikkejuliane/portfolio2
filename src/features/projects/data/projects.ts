@@ -132,16 +132,16 @@ export const PROJECTS: Project[] = [
     ],
     others: [
       `**Client Feedback:**
+
      «I had such a great experience working with Rikke Juliane! From the beginning, she were super easy to talk to and really took the time to understand what I wanted for my website. I had a rough vision in mind, and she brought it to life way better than I expected. 
      
-     The whole process was smooth and stress-free. She kept me updated along the way, were super patient with my questions and feedback, and made everything look so professional without making it complicated.The final site looks amazing it’s clean, modern, and works great on both desktop and mobile. I've already had a bunch of compliments on it! If you're looking for someone creative, reliable, and just really great to work with, I totally recommend Rikke. I’m so happy with how everything turned out!» 
-     - Marjan Bolic, Resturant Owner
+     The whole process was smooth and stress-free. She kept me updated along the way, were super patient with my questions and feedback, and made everything look so professional without making it complicated. The final site looks amazing it’s clean, modern, and works great on both desktop and mobile. I've already had a bunch of compliments on it! If you're looking for someone creative, reliable, and just really great to work with, I totally recommend Rikke. I’m so happy with how everything turned out!» 
+     
+     **- Marjan Bolic, Resturant Owner**
      `,
     ],
     screenshots: [{ src: "/rootsBig.jpg", alt: "Home" }],
   },
-
-  // ── Archive items (examples) ────────────────────────────────────────────────
 
   {
     id: "everlyst",
@@ -346,10 +346,6 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-// ──────────────────────────────────────────────────────────────────────────────
-// Helpers
-// ──────────────────────────────────────────────────────────────────────────────
-
 export const bySlug = (slug: string) => PROJECTS.find((p) => p.slug === slug);
 
 export function getPrevNext(slug: string) {
@@ -361,7 +357,3 @@ export function getPrevNext(slug: string) {
   };
 }
 
-// If you want static generation support:
-// export function generateStaticParams() {
-//   return PROJECTS.map(p => ({ slug: p.slug }));
-// }
