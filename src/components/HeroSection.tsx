@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="flex flex-col">
         <div className="flex flex-col-reverse lg:flex-row  lg:items-end">
           <Image
-            src="/nameRikkejulianehero.svg"
+            src="/rikkejulianeNameBig.png"
             alt="Rikke juliane written in my handwriting"
             width={611}
             height={125}
