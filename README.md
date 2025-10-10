@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rikke Juliane — Developer Portfolio ✨  
+Welcome to my latest portfolio — a modern, dynamic, and fully responsive showcase of my work as a **front-end developer**.  
+This site represents my growth in **React, Next.js, and Tailwind CSS**, blending functionality, animation, and aesthetics into a smooth and personal experience.
 
-## Getting Started
+---
 
-First, run the development server:
+### Table of Contents  
+- [Overview](#overview-)
+- [Features](#features-)
+- [Tech Stack](#tech-stack-)
+- [Projects](#projects-)
+- [Live Demo](#live-demo-)
+- [Contact](#contact-)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Overview 🔭  
+This portfolio is built to feel like an experience — not just a website.  
+It’s a creative hub where I share my journey, my favorite projects, and a bit of my personality.  
+Every interaction, transition, and animation is thoughtfully designed to reflect my passion for **beautiful, intuitive web interfaces**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Features 🔮  
+- Everything beside the screenshots and text is hand-drawn by me on my ipad!
+- Built with **Next.js** and **React** for fast, smooth performance.  
+- **Dynamic tabs system** for About, Projects, and Contact sections.  
+- **Custom animation transitions** for a cohesive and immersive flow.  
+- **Optimized layout** with responsive design across all screen sizes.  
+- **Interactive contact form** powered by Web3Forms API.  
+- Seamless **routing and scroll behavior** using Next.js router.  
+- Styled mostly with **Tailwind CSS** for precision and flexibility.  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### Tech Stack 🛠️  
+- **Next.js** 
+- **React**  
+- **TypeScript**  
+- **Tailwind CSS**  
+- **Framer Motion**  
+- **Web3Forms API** 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Projects 📚  
+Some of the featured projects you’ll find showcased:  
+1. **Roots Street Food** — A vibrant restaurant website built with Next.js and Tailwind CSS.  
+2. **Biddy** — Auction platform built for my Semester Project 2 with full CRUD functionality.  
+3. **Holidaze** — A modern accommodation booking platform with authentication, filtering, and CRUD functionality.   
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Each project represents a new step in my journey — from my first HTML site to advanced React applications.  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### Live Demo 👩🏽‍💻  
+Check out the live version of my portfolio here:  
+👉 [Live site](https://rikkejuliane.netlify.app/))  
+
+---
+
+### Contact 🙋🏽‍♀️  
+I’d love to connect!  
+Whether you’re interested in collaboration, freelance projects, or just want to say hi — reach out below:  
+
+🩷 [Instagram](https://www.instagram.com/rikkejuliane/)  
+💙 [LinkedIn](https://www.linkedin.com/in/rikkejuliane/)  
+
+---
+
+⭐ *Thank you for visiting — I hope you enjoy exploring my digital world as much as I enjoyed creating it.* 🌷  
